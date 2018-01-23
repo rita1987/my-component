@@ -1,6 +1,6 @@
 <template>
     <div class="manage_page fillcontain">
-
+        content
     </div>
 </template>
 

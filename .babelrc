@@ -1,9 +1,23 @@
 {
+// presets：babel6新增属性，代表需要启动什么样的预设转码（其实就是一堆plugins的预设，起到方便的作用。如果你不采用presets，完全可以单独引入某个功能），
+//在babel中，预设了6中，分别是es2015  ,stage-0 , stage-1 ,stage-2 , stage-3 ,react ，require hook
   "presets": [
-    ["env", { "modules": false }],
-    "stage-2"
+    "stage-2",
+    ["env",{
+        "modules": false,  //指定模块化方式，支持 AMD、UMD、SystemJS、CommonJS 等。当然在 Webpack 2/3 的时代，推荐将 modules 设置为 false，即交由 Webpack 来处理模块化，通过其 TreeShaking 特性将有效减少打包出来的 JS 文件大小
+        "targets": {
+//            "node": "6.10"
+        }
+    }]
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [
+      "transform-runtime"
+//      ["component", [
+//      { "libraryName": "element-ui",
+//          "styleLibraryName": "theme-default"
+//      }]
+//      ]
+  ],
   "comments": false,
   "env": {
     "test": {
